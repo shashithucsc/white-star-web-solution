@@ -226,7 +226,7 @@ function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-3xl font-extrabold md:text-4xl"
         >
-          About White Star
+          ABOUT WHITE STAR
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -272,8 +272,8 @@ function AboutSection() {
             <svg viewBox="0 0 600 380" className="mx-auto block w-full max-w-[560px]">
               <defs>
                 <radialGradient id="node" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#1E90FF" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#1E90FF" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="#0B1F44" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#0B1F44" stopOpacity="0.0" />
                 </radialGradient>
               </defs>
               {/* central node */}
@@ -288,8 +288,8 @@ function AboutSection() {
                   [300, 40],
                 ].map(([x, y], i) => (
                   <g key={i}>
-                    <motion.line x1={300} y1={180} x2={x} y2={y} stroke="#1E90FF" strokeOpacity="0.4" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.1 }} />
-                    <motion.circle cx={x} cy={y} r="6" fill="#1E90FF" fillOpacity="0.7" animate={{ r: [5.5, 6.5, 5.5] }} transition={{ repeat: Infinity, duration: 2.2, delay: i * 0.2 }} />
+                    <motion.line x1={300} y1={180} x2={x} y2={y} stroke="#0B1F44" strokeOpacity="0.5" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.1 }} />
+                    <motion.circle cx={x} cy={y} r="6" fill="#0B1F44" fillOpacity="0.7" animate={{ r: [5.5, 6.5, 5.5] }} transition={{ repeat: Infinity, duration: 2.2, delay: i * 0.2 }} />
                   </g>
                 ))}
               </g>
@@ -542,6 +542,20 @@ function CTASection() {
             >
               Let's build something amazing together.
             </motion.p>
+            <form className="mx-auto mt-8 max-w-xl text-left grid gap-6" style={{background: 'transparent'}}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-[#0B1F44] mb-2">Name</label>
+                <input type="text" id="name" name="name" required className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="Your Name" />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-[#0B1F44] mb-2">Email</label>
+                <input type="email" id="email" name="email" required className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="you@email.com" />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-[#0B1F44] mb-2">Message</label>
+                <textarea id="message" name="message" required rows={4} className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="Type your message here..." />
+              </div>
+            </form>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -549,15 +563,16 @@ function CTASection() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-8"
             >
-              <a
-                href="mailto:info@whitestarwebsolutions.com"
-                className="group inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-7 py-3 text-white shadow-lg transition-transform duration-300 ease-out hover:scale-105 hover:bg-[var(--accent-hover)] hover:shadow-xl"
+              <button
+                type="submit"
+                form="contact"
+                className="group inline-flex items-center justify-center rounded-full bg-[#0B1F44] px-7 py-3 text-white shadow-lg transition-transform duration-300 ease-out hover:scale-105 hover:bg-[#1a2f5c] hover:shadow-xl text-sm font-semibold"
               >
-                <span className="text-sm font-semibold">Get in Touch</span>
+                Get in Touch
                 <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </button>
             </motion.div>
           </div>
         </div>
