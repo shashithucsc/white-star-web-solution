@@ -240,56 +240,74 @@ function AboutSection() {
           manages innovative businesses and products across digital marketing, SaaS, e-commerce, and wellness sectors.
         </motion.p>
 
-        <div className="mt-12 mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <div className="mt-16">
+          <motion.h3
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-3xl border border-[#0B1F44]/10 bg-white p-10 shadow-[0_8px_30px_rgba(11,31,68,0.08)] md:p-12"
-            role="region"
-            aria-label="About White Star summary"
+            transition={{ duration: 0.5 }}
+            className="text-center text-3xl font-extrabold md:text-4xl"
           >
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#0B1F44] via-[#1E90FF] to-[#0B1F44]" />
+            Our Mission
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="mx-auto mt-4 max-w-3xl text-center text-secondary"
+          >
+            We combine innovation, engineering excellence, and business insight to build market-leading products and
+            long-term value across our portfolio.
+          </motion.p>
+          
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="group flex flex-col items-center rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2v4m6.36 1.64l-2.83 2.83M22 12h-4M17.17 17.17l-2.83-2.83M12 22v-4M7.64 17.36l2.83-2.83M2 12h4M6.83 6.83l2.83 2.83" />
+                </svg>
+              </div>
+              <h4 className="mt-4 text-lg font-semibold text-[#0B1F44]">AI-first Solutions</h4>
+            </motion.div>
             
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-[#0B1F44] md:text-4xl">Our Mission</h3>
-              <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#475569]">
-                We combine innovation, engineering excellence, and business insight to build market-leading products and
-                long-term value across our portfolio.
-              </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group flex flex-col items-center rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" />
+                  <path d="M3 21a9 9 0 0118 0" strokeLinecap="round" />
+                </svg>
+              </div>
+              <h4 className="mt-4 text-lg font-semibold text-[#0B1F44]">Design with Accessibility</h4>
+            </motion.div>
             
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
-                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2v4m6.36 1.64l-2.83 2.83M22 12h-4M17.17 17.17l-2.83-2.83M12 22v-4M7.64 17.36l2.83-2.83M2 12h4M6.83 6.83l2.83 2.83" />
-                  </svg>
-                </div>
-                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">AI-first Solutions</h4>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group flex flex-col items-center rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z" />
+                </svg>
               </div>
-              
-              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
-                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" />
-                    <path d="M3 21a9 9 0 0118 0" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">Design with Accessibility</h4>
-              </div>
-              
-              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
-                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z" />
-                  </svg>
-                </div>
-                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">Reliable, Secure Platforms</h4>
-              </div>
-            </div>
-          </motion.div>
+              <h4 className="mt-4 text-lg font-semibold text-[#0B1F44]">Reliable, Secure Platforms</h4>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
