@@ -642,7 +642,7 @@ function Footer() {
           <div className="mt-4 grid gap-2 text-sm text-secondary md:grid-cols-3">
             <a className="transition-colors hover:text-[var(--accent)]" href="mailto:info@whitestarwebsolutions.com">info@whitestarwebsolutions.com</a>
             <a className="transition-colors hover:text-[var(--accent)]" href="tel:+94778385938">+94 77 838 5938</a>
-            <a className="transition-colors hover:text-[var(--accent)]" href="tel:+946273901">+94 627 3901</a>
+            <a className="transition-colors hover:text-[var(--accent)]" href="tel:+946273901">+94 77 627 3901</a>
           </div>
           <div className="mt-6 text-xs text-secondary">© 2025 White Star Web Solutions. All rights reserved.</div>
         </div>
