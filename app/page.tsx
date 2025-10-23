@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, MotionConfig } from "framer-motion";
 import Image from "next/image";
+import type { ReactElement } from "react";
 
 function useScrolled(threshold: number = 8) {
   const [scrolled, setScrolled] = useState(false);
@@ -255,9 +256,9 @@ function AboutSection() {
               long-term value across our portfolio.
             </p>
             <ul className="mt-4 grid gap-2 text-sm text-secondary">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" /> AI-first solutions</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" /> Design with accessibility</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" /> Reliable, secure platforms</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> AI-first solutions</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> Design with accessibility</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> Reliable, secure platforms</li>
             </ul>
           </motion.div>
           <motion.div
@@ -301,7 +302,7 @@ function AboutSection() {
   );
 }
 
-type Product = { title: string; description: string; icon: JSX.Element };
+type Product = { title: string; description: string; icon: ReactElement };
 
 const products: Product[] = [
   {
@@ -309,7 +310,7 @@ const products: Product[] = [
     description:
       "Full-service digital marketing and technology agency delivering creative and data-driven solutions to scale brands.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path d="M12 3l2.5 5 5 .7-3.6 3.7.9 5.2L12 15l-4.8 2.6.9-5.2L4.5 8.7l5-.7L12 3z" strokeLinejoin="round" />
       </svg>
     ),
@@ -319,7 +320,7 @@ const products: Product[] = [
     description:
       "AI-powered case management software designed for lawyers to streamline legal workflows, manage cases efficiently, and enhance client experiences.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path d="M5 10h14M7 6h10M9 14h6m-9 4h12" strokeLinecap="round" />
         <rect x="3" y="4" width="18" height="16" rx="2" /></svg>
     ),
@@ -329,7 +330,7 @@ const products: Product[] = [
     description:
       "An HR and work management platform for small to medium-sized businesses, streamlining attendance, leave management, payroll, and employee productivity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" />
         <path d="M3 21a9 9 0 0118 0" strokeLinecap="round" />
       </svg>
@@ -340,7 +341,7 @@ const products: Product[] = [
     description:
       "A WordPress to Shopify migration plugin simplifying store transitions while maintaining design, functionality, and SEO integrity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path d="M4 7h10l6 6v4a3 3 0 01-3 3H7a3 3 0 01-3-3V7z" />
         <path d="M14 7v6h6" /></svg>
     ),
@@ -350,7 +351,7 @@ const products: Product[] = [
     description:
       "A wellness and mindfulness app helping users set goals, form habits, and build lifestyles centered around personal growth and productivity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path d="M12 20s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" strokeLinejoin="round" /></svg>
     ),
   },
@@ -359,7 +360,7 @@ const products: Product[] = [
     description:
       "A Shopify plugin that integrates user-generated content (UGC) from influencers directly onto your e-commerce site to boost engagement and conversions.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         <rect x="3" y="5" width="18" height="14" rx="2" />
         <circle cx="12" cy="12" r="3" /></svg>
     ),
@@ -373,7 +374,7 @@ function ProductsSection() {
   };
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
   };
   return (
     <section id="products" className="relative bg-white py-24 md:py-28">
@@ -408,23 +409,23 @@ function ProductsSection() {
               key={p.title}
               variants={item}
               href="#contact"
-              className="group glass cursor-pointer rounded-2xl border border-[var(--glass-border)] bg-white/90 p-6 transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl"
+              className="group glass cursor-pointer rounded-2xl border-2 border-[#0B1F44]/20 bg-white/90 p-6 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0B1F44]/40 hover:shadow-2xl"
             >
               <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(30,144,255,0.12)] text-[var(--accent)] transition-transform duration-300 group-hover:rotate-6">
+                <div className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(11,31,68,0.12)] text-[#0B1F44] transition-transform duration-300 group-hover:rotate-6">
                   {p.icon}
                 </div>
                 <h3 className="text-lg font-semibold">{p.title}</h3>
               </div>
               <p className="mt-3 text-sm leading-6 text-secondary">{p.description}</p>
               <div className="mt-5 h-px w-full bg-[rgba(11,31,68,0.1)]" />
-              <div className="mt-4 inline-flex items-center text-sm font-medium text-[var(--accent)]">
+              <div className="mt-4 inline-flex items-center text-sm font-medium text-[#0B1F44]">
                 Learn more
                 <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition-shadow duration-300 group-hover:ring-[rgba(30,144,255,0.45)]" />
+              <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition-shadow duration-300 group-hover:ring-[rgba(11,31,68,0.3)]" />
             </motion.a>
           ))}
         </motion.div>
@@ -503,8 +504,8 @@ function WhyChooseSection() {
               variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
               className="group relative rounded-2xl border border-[var(--glass-border)] bg-white/90 p-6 shadow-[0_4px_24px_rgba(11,31,68,0.06)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(11,31,68,0.12)]"
             >
-              <div className="absolute inset-x-0 -top-0.5 h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[var(--accent)]" />
-              <div className="inline-grid h-12 w-12 place-items-center rounded-full bg-[rgba(30,144,255,0.12)] text-[var(--accent)] transition-transform duration-300 group-hover:scale-105">
+              <div className="absolute inset-x-0 -top-0.5 h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[#0B1F44]" />
+              <div className="inline-grid h-12 w-12 place-items-center rounded-full bg-[rgba(11,31,68,0.12)] text-[#0B1F44] transition-transform duration-300 group-hover:scale-105">
                 {f.icon}
               </div>
               <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
