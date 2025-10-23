@@ -576,7 +576,7 @@ function CTASection() {
                       +94 77 838 5938
                     </a>
                     <a href="tel:+946273901" className="text-sm text-secondary hover:text-[#1E90FF] transition-colors block">
-                      +94 627 3901
+                      +94 77 627 3901
                     </a>
                   </div>
                 </div>
