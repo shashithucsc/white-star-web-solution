@@ -80,9 +80,9 @@ html, body {
 .scroll-progress {
   position: fixed;
   top: 0; left: 0; height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  background: linear-gradient(90deg, #0B1F44, #1a2f5c);
   width: 0%; z-index: 60;
-  box-shadow: 0 0 12px rgba(30,144,255,0.6);
+  box-shadow: 0 0 12px rgba(11,31,68,0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {

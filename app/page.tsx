@@ -33,7 +33,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-5">
         <a href="#top" className="flex items-center gap-3" aria-label="White Star Web Solutions">
           <div className="relative h-12 w-12 shrink-0 md:h-14 md:w-14">
-            <Image src="/WSWB_logo.png" alt="White Star Web Solutions logo" fill sizes="(max-width: 768px) 48px, 56px" className="object-contain" priority unoptimized />
+            <Image src="/WSWB_logo.png" alt="White Star Web Solutions logo" fill sizes="(max-width: 768px) 48px, 56px" className="object-contain mix-blend-darken" priority unoptimized />
           </div>
           <div className="select-none leading-tight">
             <div className="text-base font-extrabold tracking-tight text-[#0B1F44] md:text-lg">WHITE STAR</div>
@@ -158,11 +158,11 @@ function Hero() {
             </svg>
           </a>
         </motion.div>
-        <div className="pointer-events-none relative mt-8 flex justify-center gap-4 text-xs font-medium text-secondary">
+        {/* <div className="pointer-events-none relative mt-8 flex justify-center gap-4 text-xs font-medium text-secondary">
           {["6+ Products", "AI-Powered", "Enterprise Grade"].map((t) => (
             <div key={t} className="glass rounded-full px-3 py-1">{t}</div>
           ))}
-        </div>
+        </div> */}
       </motion.div>
       <style>{`@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}@keyframes blurIn{to{filter:blur(0);opacity:1}}`}</style>
     </section>
@@ -240,61 +240,55 @@ function AboutSection() {
           manages innovative businesses and products across digital marketing, SaaS, e-commerce, and wellness sectors.
         </motion.p>
 
-        <div className="mt-10 grid items-center gap-8 md:grid-cols-2">
+        <div className="mt-12 mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-2xl p-6"
+            className="relative overflow-hidden rounded-3xl border border-[#0B1F44]/10 bg-white p-10 shadow-[0_8px_30px_rgba(11,31,68,0.08)] md:p-12"
             role="region"
             aria-label="About White Star summary"
           >
-            <h3 className="text-xl font-semibold">Our Mission</h3>
-            <p className="mt-2 text-secondary">
-              We combine innovation, engineering excellence, and business insight to build market-leading products and
-              long-term value across our portfolio.
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-secondary">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> AI-first solutions</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> Design with accessibility</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#0B1F44]" /> Reliable, secure platforms</li>
-            </ul>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="relative"
-            aria-hidden
-          >
-            {/* Animated network SVG */}
-            <svg viewBox="0 0 600 380" className="mx-auto block w-full max-w-[560px]">
-              <defs>
-                <radialGradient id="node" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#0B1F44" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#0B1F44" stopOpacity="0.0" />
-                </radialGradient>
-              </defs>
-              {/* central node */}
-              <g>
-                <motion.circle cx="300" cy="180" r="10" fill="url(#node)" animate={{ r: [10, 12, 10] }} transition={{ repeat: Infinity, duration: 2 }} />
-                {[
-                  [120, 80],
-                  [480, 70],
-                  [520, 260],
-                  [100, 280],
-                  [300, 320],
-                  [300, 40],
-                ].map(([x, y], i) => (
-                  <g key={i}>
-                    <motion.line x1={300} y1={180} x2={x} y2={y} stroke="#0B1F44" strokeOpacity="0.5" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: i * 0.1 }} />
-                    <motion.circle cx={x} cy={y} r="6" fill="#0B1F44" fillOpacity="0.7" animate={{ r: [5.5, 6.5, 5.5] }} transition={{ repeat: Infinity, duration: 2.2, delay: i * 0.2 }} />
-                  </g>
-                ))}
-              </g>
-            </svg>
+            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#0B1F44] via-[#1E90FF] to-[#0B1F44]" />
+            
+            <div className="text-center">
+              <h3 className="text-3xl font-bold text-[#0B1F44] md:text-4xl">Our Mission</h3>
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#475569]">
+                We combine innovation, engineering excellence, and business insight to build market-leading products and
+                long-term value across our portfolio.
+              </p>
+            </div>
+            
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4m6.36 1.64l-2.83 2.83M22 12h-4M17.17 17.17l-2.83-2.83M12 22v-4M7.64 17.36l2.83-2.83M2 12h4M6.83 6.83l2.83 2.83" />
+                  </svg>
+                </div>
+                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">AI-first Solutions</h4>
+              </div>
+              
+              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" />
+                    <path d="M3 21a9 9 0 0118 0" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">Design with Accessibility</h4>
+              </div>
+              
+              <div className="group flex flex-col items-center rounded-xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F44]/20 hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F44]/10">
+                  <svg className="h-6 w-6 text-[#0B1F44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z" />
+                  </svg>
+                </div>
+                <h4 className="mt-3 text-base font-bold text-[#0B1F44]">Reliable, Secure Platforms</h4>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -310,9 +304,7 @@ const products: Product[] = [
     description:
       "Full-service digital marketing and technology agency delivering creative and data-driven solutions to scale brands.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <path d="M12 3l2.5 5 5 .7-3.6 3.7.9 5.2L12 15l-4.8 2.6.9-5.2L4.5 8.7l5-.7L12 3z" strokeLinejoin="round" />
-      </svg>
+      <Image src="/logos/artslab.png" alt="Artslab" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
   {
@@ -320,9 +312,7 @@ const products: Product[] = [
     description:
       "AI-powered case management software designed for lawyers to streamline legal workflows, manage cases efficiently, and enhance client experiences.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <path d="M5 10h14M7 6h10M9 14h6m-9 4h12" strokeLinecap="round" />
-        <rect x="3" y="4" width="18" height="16" rx="2" /></svg>
+      <Image src="/logos/legistant.png" alt="Legistant" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
   {
@@ -330,10 +320,7 @@ const products: Product[] = [
     description:
       "An HR and work management platform for small to medium-sized businesses, streamlining attendance, leave management, payroll, and employee productivity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" />
-        <path d="M3 21a9 9 0 0118 0" strokeLinecap="round" />
-      </svg>
+      <Image src="/logos/aumerix.png" alt="Aumerix" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
   {
@@ -341,9 +328,7 @@ const products: Product[] = [
     description:
       "A WordPress to Shopify migration plugin simplifying store transitions while maintaining design, functionality, and SEO integrity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <path d="M4 7h10l6 6v4a3 3 0 01-3 3H7a3 3 0 01-3-3V7z" />
-        <path d="M14 7v6h6" /></svg>
+      <Image src="/logos/flow_cart.png" alt="FlowCart" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
   {
@@ -351,8 +336,7 @@ const products: Product[] = [
     description:
       "A wellness and mindfulness app helping users set goals, form habits, and build lifestyles centered around personal growth and productivity.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <path d="M12 20s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" strokeLinejoin="round" /></svg>
+      <Image src="/logos/nyvara.png" alt="Nyvara" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
   {
@@ -360,9 +344,7 @@ const products: Product[] = [
     description:
       "A Shopify plugin that integrates user-generated content (UGC) from influencers directly onto your e-commerce site to boost engagement and conversions.",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0B1F44]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <circle cx="12" cy="12" r="3" /></svg>
+      <Image src="/logos/influencer_showcase.png" alt="Influencer Showcase" width={40} height={40} unoptimized className="object-contain" />
     ),
   },
 ];
@@ -409,23 +391,22 @@ function ProductsSection() {
               key={p.title}
               variants={item}
               href="#contact"
-              className="group glass cursor-pointer rounded-2xl border-2 border-[#0B1F44]/20 bg-white/90 p-6 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0B1F44]/40 hover:shadow-2xl"
+              className="group flex cursor-pointer flex-col rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
             >
               <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(11,31,68,0.12)] text-[#0B1F44] transition-transform duration-300 group-hover:rotate-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F5FAFF] p-2 transition-transform duration-300 group-hover:scale-110">
                   {p.icon}
                 </div>
                 <h3 className="text-lg font-semibold">{p.title}</h3>
               </div>
-              <p className="mt-3 text-sm leading-6 text-secondary">{p.description}</p>
-              <div className="mt-5 h-px w-full bg-[rgba(11,31,68,0.1)]" />
+              <p className="mt-3 flex-1 text-sm leading-6 text-secondary">{p.description}</p>
+              <div className="mt-5 h-px w-full bg-[#0B1F44]/20" />
               <div className="mt-4 inline-flex items-center text-sm font-medium text-[#0B1F44]">
                 Learn more
                 <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition-shadow duration-300 group-hover:ring-[rgba(11,31,68,0.3)]" />
             </motion.a>
           ))}
         </motion.div>
@@ -520,62 +501,114 @@ function WhyChooseSection() {
 
 function CTASection() {
   return (
-    <section id="contact" className="relative bg-white py-24 md:py-28">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-[var(--glass-border)] bg-white shadow-[0_12px_40px_rgba(11,31,68,0.12)]">
-          <div className="absolute inset-0 rounded-3xl ring-2 ring-[rgba(30,144,255,0.35)]" aria-hidden />
-          <div className="relative z-10 px-8 py-12 text-center md:px-16 md:py-16">
-            <motion.h3
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl font-extrabold md:text-3xl"
-            >
-              Ready to partner with us or learn more?
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="mx-auto mt-3 max-w-2xl text-secondary"
-            >
-              Let's build something amazing together.
-            </motion.p>
-            <form className="mx-auto mt-8 max-w-xl text-left grid gap-6" style={{background: 'transparent'}}>
+    <section id="contact" className="relative bg-white py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center mb-12">
+          <motion.h3
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-extrabold md:text-3xl text-[#0B1F44]"
+          >
+            Ready to partner with us or learn more?
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="mx-auto mt-3 max-w-2xl text-secondary"
+          >
+            Let's build something amazing together.
+          </motion.p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          {/* Contact Details - Left Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-8 space-y-6 h-full"
+          >
+            <div>
+              <h4 className="text-lg font-bold text-[#0B1F44] mb-4">Contact Information</h4>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <svg className="h-5 w-5 text-[#1E90FF] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <div>
+                    <p className="text-sm font-medium text-[#0B1F44]">Email</p>
+                    <a href="mailto:info@whitestarwebsolutions.com" className="text-sm text-secondary hover:text-[#1E90FF] transition-colors">
+                      info@whitestarwebsolutions.com
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <svg className="h-5 w-5 text-[#1E90FF] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <div>
+                    <p className="text-sm font-medium text-[#0B1F44]">Phone</p>
+                    <a href="tel:+94778385938" className="text-sm text-secondary hover:text-[#1E90FF] transition-colors block">
+                      +94 77 838 5938
+                    </a>
+                    <a href="tel:+946273901" className="text-sm text-secondary hover:text-[#1E90FF] transition-colors block">
+                      +94 627 3901
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <svg className="h-5 w-5 text-[#1E90FF] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <p className="text-sm font-medium text-[#0B1F44]">Company</p>
+                    <p className="text-sm text-secondary">White Star Web Solutions (Pvt) Ltd</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Contact Form - Right Column */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-[#0B1F44]/10 bg-white p-8 shadow-sm h-full"
+          >
+            <form id="contact" className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[#0B1F44] mb-2">Name</label>
-                <input type="text" id="name" name="name" required className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="Your Name" />
+                <input type="text" id="name" name="name" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="Your Name" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-[#0B1F44] mb-2">Email</label>
-                <input type="email" id="email" name="email" required className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="you@email.com" />
+                <input type="email" id="email" name="email" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="you@email.com" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-[#0B1F44] mb-2">Message</label>
-                <textarea id="message" name="message" required rows={4} className="w-full rounded-lg border border-[var(--glass-border)] bg-[#F5FAFF] px-4 py-3 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF]" placeholder="Type your message here..." />
+                <textarea id="message" name="message" required rows={4} className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] resize-none transition-shadow" placeholder="Type your message here..." />
               </div>
-            </form>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-8"
-            >
               <button
                 type="submit"
-                form="contact"
-                className="group inline-flex items-center justify-center rounded-full bg-[#0B1F44] px-7 py-3 text-white shadow-lg transition-transform duration-300 ease-out hover:scale-105 hover:bg-[#1a2f5c] hover:shadow-xl text-sm font-semibold"
+                className="group inline-flex w-full items-center justify-center rounded-lg bg-[#0B1F44] px-6 py-3 text-white shadow-md transition-all duration-300 ease-out hover:bg-[#1a2f5c] hover:shadow-lg text-sm font-semibold"
               >
-                Get in Touch
+                Send Message
                 <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-            </motion.div>
-          </div>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>
