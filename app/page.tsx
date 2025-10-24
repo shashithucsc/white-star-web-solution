@@ -114,9 +114,9 @@ function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, -60]);
   return (
-    <section ref={ref} id="top" className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-white">
+    <section ref={ref} id="top" className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-white" aria-label="Hero section">
       {/* Full-section animated mesh gradient background */}
-      <div className="mesh-bg" aria-hidden />
+      <div className="mesh-bg" aria-hidden="true" />
 
       <motion.div style={{ y }} className="relative z-10 mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
         <motion.h1
@@ -204,11 +204,11 @@ export default function Home() {
 
 function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-white">
-      <div className="absolute inset-0 opacity-60" aria-hidden>
+    <section id="about" className="relative overflow-hidden bg-white" aria-labelledby="about-heading">
+      <div className="absolute inset-0 opacity-60" aria-hidden="true">
         <div className="h-full w-full bg-[linear-gradient(135deg,#FFFFFF_0%,#F8FAFC_100%)]" />
       </div>
-      <div className="absolute inset-0" aria-hidden>
+      <div className="absolute inset-0" aria-hidden="true">
         {/* subtle dot grid */}
         <svg className="h-full w-full text-[rgba(11,31,68,0.03)]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -221,6 +221,7 @@ function AboutSection() {
       </div>
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-28">
         <motion.h2
+          id="about-heading"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -242,6 +243,7 @@ function AboutSection() {
 
         <div className="mt-16">
           <motion.h3
+            id="mission-heading"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -322,7 +324,7 @@ const products: Product[] = [
     description:
       "Full-service digital marketing and technology agency delivering creative and data-driven solutions to scale brands.",
     icon: (
-      <Image src="/logos/artslab.png" alt="Artslab" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/artslab.png" alt="Artslab Creatives logo" width={40} height={40} unoptimized className="object-contain" loading="lazy" />
     ),
   },
   {
@@ -330,7 +332,7 @@ const products: Product[] = [
     description:
       "AI-powered case management software designed for lawyers to streamline legal workflows, manage cases efficiently, and enhance client experiences.",
     icon: (
-      <Image src="/logos/legistant.png" alt="Legistant" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/legistant.png" alt="Legistant logo" width={40} height={40} unoptimized className="object-contain" loading="lazy" />
     ),
   },
   {
@@ -338,7 +340,7 @@ const products: Product[] = [
     description:
       "An HR and work management platform for small to medium-sized businesses, streamlining attendance, leave management, payroll, and employee productivity.",
     icon: (
-      <Image src="/logos/aumerix.png" alt="Aumerix" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/aumerix.png" alt="Aumerix logo" width={40} height={40} unoptimized className="object-contain" loading="lazy" />
     ),
   },
   {
@@ -346,7 +348,7 @@ const products: Product[] = [
     description:
       "A WordPress to Shopify migration plugin simplifying store transitions while maintaining design, functionality, and SEO integrity.",
     icon: (
-      <Image src="/logos/flow_cart.png" alt="FlowCart" width={100} height={100} unoptimized className="object-contain" />
+      <Image src="/logos/flow_cart.png" alt="FlowCart logo" width={100} height={100} unoptimized className="object-contain" loading="lazy" />
     ),
   },
   {
@@ -354,7 +356,7 @@ const products: Product[] = [
     description:
       "A wellness and mindfulness app helping users set goals, form habits, and build lifestyles centered around personal growth and productivity.",
     icon: (
-      <Image src="/logos/nyvara.png" alt="Nyvara" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/nyvara.png" alt="Nyvara logo" width={40} height={40} unoptimized className="object-contain" loading="lazy" />
     ),
   },
   {
@@ -362,7 +364,7 @@ const products: Product[] = [
     description:
       "A Shopify plugin that integrates user-generated content (UGC) from influencers directly onto your e-commerce site to boost engagement and conversions.",
     icon: (
-      <Image src="/logos/influencer_showcase.png" alt="Influencer Showcase" width={56} height={56} unoptimized className="object-contain" />
+      <Image src="/logos/influencer_showcase.png" alt="Influencer Showcase logo" width={56} height={56} unoptimized className="object-contain" loading="lazy" />
     ),
   },
 ];
@@ -377,9 +379,10 @@ function ProductsSection() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
   };
   return (
-    <section id="products" className="relative bg-white py-24 md:py-28">
+    <section id="products" className="relative bg-white py-24 md:py-28" aria-labelledby="products-heading">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
+          id="products-heading"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -410,6 +413,7 @@ function ProductsSection() {
               variants={item}
               href="#contact"
               className="group flex cursor-pointer flex-col rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
+              aria-label={`Learn more about ${p.title}`}
             >
               <div className="flex items-center gap-3">
                 <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-[#F5FAFF] transition-transform duration-300 group-hover:scale-110 ${p.title === 'FlowCart' ? 'p-0.125' : 'p-2'}`}>
@@ -466,12 +470,12 @@ function WhyChooseSection() {
     },
   ];
   return (
-    <section className="relative overflow-hidden bg-white py-24 md:py-28">
-      <div className="absolute inset-0 opacity-70" aria-hidden>
+    <section className="relative overflow-hidden bg-white py-24 md:py-28" aria-labelledby="why-choose-heading">
+      <div className="absolute inset-0 opacity-70" aria-hidden="true">
         <div className="h-full w-full bg-[linear-gradient(135deg,#FFFFFF_0%,#F8FAFC_100%)]" />
       </div>
-      <div className="absolute inset-0" aria-hidden>
-        <svg className="h-full w-full text-[rgba(11,31,68,0.03)]" xmlns="http://www.w3.org/2000/svg">
+      <div className="absolute inset-0" aria-hidden="true">
+        <svg className="h-full w-full text-[rgba(11,31,68,0.03)]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
               <path d="M30 0H0v30" fill="none" stroke="currentColor" strokeWidth="0.5" />
@@ -482,6 +486,7 @@ function WhyChooseSection() {
       </div>
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <motion.h2
+          id="why-choose-heading"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -519,10 +524,11 @@ function WhyChooseSection() {
 
 function CTASection() {
   return (
-    <section id="contact" className="relative bg-white py-20 md:py-24">
+    <section id="contact" className="relative bg-white py-20 md:py-24" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-12">
-          <motion.h3
+          <motion.h2
+            id="contact-heading"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -530,7 +536,7 @@ function CTASection() {
             className="text-2xl font-extrabold md:text-3xl text-[#0B1F44]"
           >
             Ready to partner with us or learn more?
-          </motion.h3>
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -603,25 +609,26 @@ function CTASection() {
             transition={{ duration: 0.5 }}
             className="rounded-2xl border border-[#0B1F44]/30 bg-white p-8 shadow-sm h-full"
           >
-            <form id="contact" className="space-y-5">
+            <form id="contact" className="space-y-5" aria-label="Contact form">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[#0B1F44] mb-2">Name</label>
-                <input type="text" id="name" name="name" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="Your Name" />
+                <input type="text" id="name" name="name" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="Your Name" aria-required="true" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-[#0B1F44] mb-2">Email</label>
-                <input type="email" id="email" name="email" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="you@email.com" />
+                <input type="email" id="email" name="email" required className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] transition-shadow" placeholder="you@email.com" aria-required="true" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-[#0B1F44] mb-2">Message</label>
-                <textarea id="message" name="message" required rows={4} className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] resize-none transition-shadow" placeholder="Type your message here..." />
+                <textarea id="message" name="message" required rows={4} className="w-full rounded-lg border border-[#0B1F44]/20 bg-[#F5FAFF] px-4 py-2.5 text-[#0B1F44] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] resize-none transition-shadow" placeholder="Type your message here..." aria-required="true" />
               </div>
               <button
                 type="submit"
                 className="group inline-flex w-full items-center justify-center rounded-lg bg-[#0B1F44] px-6 py-3 text-white shadow-md transition-all duration-300 ease-out hover:bg-[#1a2f5c] hover:shadow-lg text-sm font-semibold"
+                aria-label="Submit contact form"
               >
                 Send Message
-                <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
@@ -635,7 +642,7 @@ function CTASection() {
 
 function Footer() {
   return (
-    <footer className="border-t border-[rgba(11,31,68,0.1)] bg-[#F8FAFC] py-10 text-primary">
+    <footer className="border-t border-[rgba(11,31,68,0.1)] bg-[#F8FAFC] py-10 text-primary" role="contentinfo">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <div className="text-base font-medium">White Star Web Solutions (Pvt) Ltd</div>
