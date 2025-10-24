@@ -346,7 +346,7 @@ const products: Product[] = [
     description:
       "A WordPress to Shopify migration plugin simplifying store transitions while maintaining design, functionality, and SEO integrity.",
     icon: (
-      <Image src="/logos/flow_cart.png" alt="FlowCart" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/flow_cart.png" alt="FlowCart" width={100} height={100} unoptimized className="object-contain" />
     ),
   },
   {
@@ -362,7 +362,7 @@ const products: Product[] = [
     description:
       "A Shopify plugin that integrates user-generated content (UGC) from influencers directly onto your e-commerce site to boost engagement and conversions.",
     icon: (
-      <Image src="/logos/influencer_showcase.png" alt="Influencer Showcase" width={40} height={40} unoptimized className="object-contain" />
+      <Image src="/logos/influencer_showcase.png" alt="Influencer Showcase" width={56} height={56} unoptimized className="object-contain" />
     ),
   },
 ];
@@ -412,7 +412,7 @@ function ProductsSection() {
               className="group flex cursor-pointer flex-col rounded-2xl border border-[#0B1F44]/30 bg-white p-6 shadow-md transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-2xl"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#F5FAFF] p-2 transition-transform duration-300 group-hover:scale-110">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-[#F5FAFF] transition-transform duration-300 group-hover:scale-110 ${p.title === 'FlowCart' ? 'p-0.125' : 'p-2'}`}>
                   {p.icon}
                 </div>
                 <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -501,7 +501,7 @@ function WhyChooseSection() {
             <motion.div
               key={f.title}
               variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-              className="group relative rounded-2xl border border-[var(--glass-border)] bg-white/90 p-6 shadow-[0_4px_24px_rgba(11,31,68,0.06)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(11,31,68,0.12)]"
+              className="group relative rounded-2xl border border-[#0B1F44]/30 bg-white/90 p-6 shadow-[0_4px_24px_rgba(11,31,68,0.06)] transition-all duration-300 hover:-translate-y-2 hover:border-[#0B1F44] hover:shadow-[0_12px_40px_rgba(11,31,68,0.12)]"
             >
               <div className="absolute inset-x-0 -top-0.5 h-1 rounded-t-2xl bg-transparent transition-colors duration-300 group-hover:bg-[#0B1F44]" />
               <div className="inline-grid h-12 w-12 place-items-center rounded-full bg-[rgba(11,31,68,0.12)] text-[#0B1F44] transition-transform duration-300 group-hover:scale-105">
@@ -549,7 +549,7 @@ function CTASection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-[#0B1F44]/10 bg-[#F5FAFF] p-8 space-y-6 h-full"
+            className="rounded-2xl border border-[#0B1F44]/30 bg-[#F5FAFF] p-8 space-y-6 h-full"
           >
             <div>
               <h4 className="text-lg font-bold text-[#0B1F44] mb-4">Contact Information</h4>
@@ -601,7 +601,7 @@ function CTASection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-[#0B1F44]/10 bg-white p-8 shadow-sm h-full"
+            className="rounded-2xl border border-[#0B1F44]/30 bg-white p-8 shadow-sm h-full"
           >
             <form id="contact" className="space-y-5">
               <div>
